@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    width: 300px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+h1 {
+    margin: 20px;
+}
+
+button {
+    padding: 6px 13px;
+    background-color: rgb(64, 117, 202);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .2s;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.output {
+    width: 400px;
+    margin: auto;
+}
+
+ul li:nth-child(2) {
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    border-bottom: 1px solid #777;
+    padding: 7px;
+    padding-left: 2px;
+}
+
+li span {
+    float: right
+}
