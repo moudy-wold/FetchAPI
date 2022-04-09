@@ -4,15 +4,13 @@ let output = document.querySelector('.output'),
 btn.addEventListener('click', showData);
 
 function showData() {
-    // console.log('asd');
-
+    
     // get data
     fetch('https://randomuser.me/api/')
         .then(res => res.json())
         .then(data => {
-            // console.log(data.results[0])
-            let dat = data.results[0];
-            console.log(dat)
+          
+            let dat = data.results[0];         
             output.innerHTML = `
             <ul>
                 <li>Name: ${dat.name.title} ${dat.name.first} ${dat.name.last}</li>
