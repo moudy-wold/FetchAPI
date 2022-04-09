@@ -4,26 +4,17 @@ let output = document.querySelector('.output'),
 btn.addEventListener('click', showData);
 
 function showData() {
-    
-    // get data
-    fetch('https://randomuser.me/api/')
-          // convert data to JSON format
-        .then(res => res.json())
 
+    // get data
+    fetch('https://randomuser.me/api/?results=20')
+        // convert data to JSON format
+        .then(res => res.json())
         .then(data => {
             let dat = data.results;
-        //   sort data According to age 
-            function compare(a, b) {
-                if (a.dob.age < b.dob.age) {
-                    return -1;
-                }
-                if (a.dob.age > b.dob.age) {
-                    return 1;
-                }
-                return 0;
-            }
-            let arr = dat.sort(compare);
-            arr.forEach(item => {
+        
+            //   sort data According to age 
+            dat.sort((a, b) => a.dob.age - b.dob.age)
+            dat.forEach(item => {
                 output.innerHTML += `
             <ul>
                 <li>Name: ${item.name.title} ${item.name.first} ${item.name.last}</li>
@@ -35,6 +26,6 @@ function showData() {
                 <li>Country: <span> ${item.location.city}</span></li>
             </ul>
             `
+            })
         })
-
 }
